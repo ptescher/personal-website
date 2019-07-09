@@ -46,5 +46,7 @@ projects:
   # website: http://your_website_url
   # youtube: your_username
 
-topics: []
+topics:
+  - name: Blockchain
+  - name: Kubernetes
 theme: jekyll-theme-minimal
