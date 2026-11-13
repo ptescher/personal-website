@@ -1,0 +1,59 @@
+- name: SIM001
+  tagline: A flight simulator for practising with small FPV planes.
+  url: https://sim001.net
+  repo: https://github.com/ptescher/sim001
+  image: /assets/images/sim001.jpg
+  image_alt: The T1-S flying over an alpine meadow, seen from the chase camera
+  description: >-
+    A Bevy flight simulator for the HEEWING T1-S Ranger and the T1-S VTOL. The 6-DOF flight
+    model is built from strip theory, so stalls, adverse yaw, prop wash and V-tail coupling
+    come out of the airframe's geometry. A real ArduPilot flight controller runs in lockstep
+    with the physics, and you fly it with your own radio.
+  highlights:
+    - ArduPlane SITL in the loop, with a ground control station for missions
+    - Optional ray-traced lighting with Bevy Solari, on Metal hardware ray tracing
+    - Real places built from USGS lidar, NAIP aerial photos and OpenStreetMap
+    - Games against computer pilots who fly the same plane on the same physics
+  links:
+    - name: sim001.net
+      url: https://sim001.net
+    - name: Manual
+      url: https://sim001.net/docs/site/
+    - name: Source
+      url: https://github.com/ptescher/sim001
+
+- name: Expectation
+  tagline: Acceptance testing where the behaviour itself is the source of truth.
+  url: https://expectation.sim001.net
+  repo: https://github.com/ptescher/expectation
+  code: |
+    Expectation: Turning the dial up starts the kettle
+      Given the kettle is off
+      When the dial is above 55 %
+      Then the kettle is heating
+
+    Expectation: The child lock holds the kettle
+      Overrides: Turning the dial up starts the kettle
+      Given the kettle is off
+      And the child lock is on
+      When the dial is above 55 %
+      Then the kettle is off
+  description: >-
+    Write a system's behaviour once, as Given/When/Then expectations in a shared vocabulary
+    of states and events. Because every step is declared, expectations can be compared
+    mechanically: Expectation finds the ones that conflict, compiles user stories into
+    acceptance tests, runs them against the real program and writes the user manual.
+  highlights:
+    - Conflicting expectations are detected, and exceptions are declared with Overrides
+    - A story describes only the journey, and the expectations it passes supply the checks
+    - A screenshot at every step, turned into tutorials, topic pages and a test report
+    - No dependencies outside the Rust standard library
+  links:
+    - name: expectation.sim001.net
+      url: https://expectation.sim001.net
+    - name: Guide
+      url: https://expectation.sim001.net/guide/
+    - name: Example manual
+      url: https://expectation.sim001.net/example/site/index.html
+    - name: Source
+      url: https://github.com/ptescher/expectation
