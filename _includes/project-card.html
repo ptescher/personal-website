@@ -1,0 +1,22 @@
+<div class="github-component project-card text-left {% if site.style == 'dark' %}box-shadow{% else %}border border-gray-light{% endif %} bg-white rounded-1">
+  {% if project.image %}
+    <a href="{{ project.url }}"><img class="project-image" src="{{ project.image | relative_url }}" alt="{{ project.image_alt }}"></a>
+  {% elsif project.code %}
+    <pre class="project-code">{{ project.code | xml_escape }}</pre>
+  {% endif %}
+  <div class="p-4">
+    <h1 class="f3 lh-condensed mb-1"><a href="{{ project.url }}">{{ project.name }}</a></h1>
+    <p class="f4 text-gray mb-3">{{ project.tagline }}</p>
+    <p class="f5 mb-3">{{ project.description }}</p>
+    <ul class="f5 text-gray pl-4 mb-3">
+      {% for highlight in project.highlights %}
+        <li>{{ highlight }}</li>
+      {% endfor %}
+    </ul>
+    <div class="d-flex flex-wrap f5">
+      {% for link in project.links %}
+        <a href="{{ link.url }}" class="mr-4 mb-1">{{ link.name }}</a>
+      {% endfor %}
+    </div>
+  </div>
+</div>
